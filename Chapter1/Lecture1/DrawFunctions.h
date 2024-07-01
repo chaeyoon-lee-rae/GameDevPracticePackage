@@ -27,6 +27,7 @@ namespace jm
 	void drawFilledBox(const RGB& color, const float& width, const float& height);
 	void drawFilledRegularConvexPolygon(const RGB& color, const float& radius, const float & start_theta = 0.0f, const int& num_segments = 100);
 	void drawFilledCircle(const RGB& color, const float& radius);
+	void drawFilledCircle(const RGB& color, const float& radius, const RGB& outlineColor, const float& thickness);
 	void drawFilledTriangle(const RGB& color, const float& edge_length);
 	void drawFilledTriangle(const RGB& color, const vec2& v0, const vec2& v1, const vec2& v2);
 	void drawFilledSquare(const RGB& color, const float& edge_length);
@@ -42,6 +43,8 @@ namespace jm
 	void translate(const float& pos_x, const float& pos_y);
 	void rotate(const float& degree);
 	void scale(const float& scale_x, const float& scale_y);
+
+	void scale(const vec2& v);
 
 	// Other options
 	void setLineWidth(const int & width);

@@ -25,5 +25,6 @@ namespace jm
 		~RGB()
 		{
 		}
+
 	};
 }

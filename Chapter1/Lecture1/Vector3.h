@@ -27,6 +27,19 @@ namespace jm
 		~Vector3()
 		{}
 
+		//Vector3(const Vector3<T>& vTemp)
+		//	: x(vTemp.x), y(vTemp.y), z(vTemp.z);
+		//{}
+
+		void operator = (const Vector3<T>& v) 
+		{
+			x = v.x;
+			y = v.y;
+			z = v.z;
+
+			//return *this;
+		}
+
 		void operator += (const Vector3<T>& v)
 		{
 			x += v.x;
@@ -75,6 +88,10 @@ namespace jm
 			return Vector3<T>(x * one_over_a, y * one_over_a, z * one_over_a);
 		}
 
+		friend bool operator == (const Vector3<T>& v1, const Vector3<T>& v2) {
+			return v1.r == v2.r && v1.g == v2.g && v1.b == v2.b;
+		}
+
 		T & operator [] (const int & ix)
 		{
 			assert(ix >= 0);
@@ -90,5 +107,11 @@ namespace jm
 
 			return data[ix];
 		}
+
+		//friend std::ostream& operator << (std::ostream& out, const Vector3<T>& v)
+		//{
+		//	out << v.x << " " << v.y << " " << x.z;
+		//	return out;
+		//}
 	};
 }

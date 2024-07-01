@@ -51,6 +51,11 @@ namespace jm
 		glScalef(scale_x, scale_y, 1.0);
 	}
 
+	void scale(const vec2 & v)
+	{
+		glScalef(v.x, v.y, 1.0);
+	}
+
 	void drawPoint(const RGB & color, const vec2 & position, const float & size)
 	{
 		glColor3fv(color.data);
@@ -144,10 +149,16 @@ namespace jm
 		glEnd();
 	}
 
-	void drawFilledCircle(const RGB & color, const float & radius)
+	void drawFilledCircle(const RGB& color, const float& radius)
 	{
 		drawFilledRegularConvexPolygon(color, radius - 1e-4f, 0.0f, 30);
 		drawWiredRegularConvexPolygon(color, radius, 0.0f, 30); // draw smooth boundary
+	}
+
+	void drawFilledCircle(const RGB& color, const float& radius, const RGB& outlineColor, const float& thickness)
+	{
+		drawFilledCircle(outlineColor, radius + thickness);
+		drawFilledCircle(color, radius);
 	}
 
 	void drawFilledTriangle(const RGB & color, const float & edge_length)

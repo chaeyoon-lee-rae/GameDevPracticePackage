@@ -220,7 +220,7 @@ namespace jm
 		if (glfw_window == nullptr)
 			init("This is my digital canvas!", 1280, 960, false); // initialize with default setting
 
-		while (!glfwWindowShouldClose(glfw_window))// main loop
+		while (!glfwWindowShouldClose(glfw_window)) // 게임의 main loop
 		{
 			if (isKeyPressed(GLFW_KEY_ESCAPE)) {
 				std::cout << "ESC key ends main loop" << std::endl;
@@ -229,7 +229,7 @@ namespace jm
 
 			timer.start();
 
-			// pre draw
+			// pre draw, 전처리
 			glfwMakeContextCurrent(glfw_window);
 			glClearColor(1, 1, 1, 1);			 // while background
 			glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
@@ -239,7 +239,7 @@ namespace jm
 
 			drawGrid();
 
-			update();	// the major worker function
+			update();	// the major worker function, update 여기서 호출
 
 			glPopMatrix();
 

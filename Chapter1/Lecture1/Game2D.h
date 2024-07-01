@@ -26,16 +26,18 @@ namespace jm
 		int width = 640;
 		int height = 480;
 
-		GLFWwindow* glfw_window = nullptr;
+		GLFWwindow* glfw_window = nullptr; // 창에 대한 포인터
+		// GLFW 윈도우를 화면에 띄워주는 API
 
 		Timer timer;
 
+		// fps의 역수
 		float spf = 1.0f / 60.0f;		 // second(s) per frame
 
 		// control options
 		std::map<int, bool> key_status;  // key_id, is_pressed
 		std::map<int, bool> mbtn_status; // mouse_button_id, is_pressed
-		bool draw_grid = false;
+		bool draw_grid = true;
 
 	public:
 		Game2D()
@@ -49,10 +51,12 @@ namespace jm
 		Game2D & init(const std::string& _title, const int& _width, const int& _height,
 			const bool & use_full_screen = false, const int & display_ix = 0);
 
+		// 에러 출력
 		void reportErrorAndExit(const std::string& function_name, const std::string& message);
 
 		bool isKeyPressed(const int& key);
 		bool isKeyReleased(const int & key);
+		// 눌렀다가 떼었는지
 		bool isKeyPressedAndReleased(const int& key);
 
 		bool isMouseButtonPressed(const int& mbtn);
@@ -61,11 +65,13 @@ namespace jm
 
 		vec2 getCursorPos(const bool& screen_coordinates = true);
 
+		// 더 정밀한 시간 간격을 구현할 수도 있다
 		float getTimeStep();
 
 		void drawGrid();
 
 		void run();
+
 
 		virtual void update() 
 		{
