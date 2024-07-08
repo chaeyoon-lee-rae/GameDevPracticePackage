@@ -75,7 +75,7 @@ namespace jm
 			// yellow arm back
 			beginTransformation();
 			translate(center);
-			rotate(-sin(time * 5.0f) * 30.0f);					// animation!
+			rotate(-sin(time * 5.0f) * 30.0f);
 			translate(0.0f, -0.2f);
 			drawFilledBox(Colors::yellow, 0.05f, 0.36f);
 			endTransformation();
@@ -85,7 +85,7 @@ namespace jm
 			translate(center);
 			translate(0.0f, -0.6f);
 			translate(0.0f, 0.2f);
-			rotate(-sinf(time * 5.0f + 3.141592f) * 30.0f);	// animation!
+			rotate(-sinf(time * 5.0f + 3.141592f) * 30.0f);
 			translate(0.0f, -0.2f);
 			drawFilledBox(Colors::green, 0.1f, 0.4f);
 			endTransformation();
@@ -95,7 +95,7 @@ namespace jm
 			// yellow arm front
 			beginTransformation();
 			translate(center);
-			rotate(sin(time * 5.0f) * 30.0f);					// animation!
+			rotate(sin(time * 5.0f) * 30.0f);
 			translate(0.0f, -0.2f);
 			drawFilledBox(Colors::yellow, 0.05f, 0.36f);
 			endTransformation();
@@ -105,7 +105,7 @@ namespace jm
 			translate(center);
 			translate(0.0f, -0.6f);
 			translate(0.0f, 0.2f);
-			rotate(sinf(time * 5.0f + 3.141592f) * 30.0f);	// animation!
+			rotate(sinf(time * 5.0f + 3.141592f) * 30.0f);
 			translate(0.0f, -0.2f);
 			drawFilledBox(Colors::green, 0.1f, 0.4f);
 			endTransformation();
