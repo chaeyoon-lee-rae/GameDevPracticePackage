@@ -25,6 +25,11 @@ namespace jm
 			: BASE(_rgb.r, _rgb.g, _rgb.b)
 		{}
 
+		// Vector3·Î initialize
+		RGB(const Vector3<float>& _v3)
+			: BASE(_v3.r, _v3.g, _v3.b)
+		{}
+
 		~RGB()
 		{
 		}
